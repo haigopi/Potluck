@@ -1,0 +1,56 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.0.RELEASE'
+	}
+	repositories {
+		maven {
+			url 'https://artifactory.cloud.capitalone.com:443/artifactory/maven-internalfacing'
+		}
+	}
+//	repositories {
+//		mavenCentral()
+//	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.allibilli'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    maven {
+        url 'https://artifactory.cloud.capitalone.com:443/artifactory/maven-internalfacing'
+    }
+}
+//repositories {
+//	mavenCentral()
+//}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-cache')
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+	compile('org.springframework.boot:spring-boot-starter-data-rest')
+	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.springframework.boot:spring-boot-starter-validation')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-webflux')
+	compile('org.springframework.session:spring-session-core')
+	runtime('org.springframework.boot:spring-boot-devtools')
+
+	compile group: 'javax.activation', name: 'activation', version: '1.1.1'
+	compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    compile group: 'javax.mail', name: 'javax.mail-api', version: '1.6.1'
+
+	compileOnly('org.projectlombok:lombok')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('io.projectreactor:reactor-test')
+	testCompile('org.springframework.security:spring-security-test')
+}

@@ -1,0 +1,15 @@
+security:
+  ignored: /**
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://potluck:potluck@cluster0-smvcu.mongodb.net/test
+      database: test
+server:
+  servlet:
+    context-path: /event
+
+app:
+  client:
+    url: allibilli.com/potluck

@@ -1,0 +1,45 @@
+{
+    "name": "PotLuck2015",
+    "children": [
+        {
+            "name": "Geeta",
+            "email": "geetakancharla@gmail.com",
+            "children": [
+                {
+                    "name": "Veg Biryani",
+                    "count": 1
+                },
+                {
+                    "name": "Sambar",
+                    "size": 1
+                },
+                {
+                    "name": "Salt",
+                    "size": 1
+                },
+                {
+                    "name": "Pepper",
+                    "size": 1
+                }
+            ]
+        },
+        {
+            "name": "Gopi",
+            "email": "haigopi@gmail.com",
+            "children": [
+                {
+                    "name": "Paper Plates",
+                    "size": 1041
+                },
+                {
+                    "name": "Plastic Glasses",
+                    "size": 5176
+                },
+                {
+                    "name": "Paper Napkins",
+                    "size": 5176
+                }
+            ]
+        }
+    ]
+}
