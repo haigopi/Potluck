@@ -7,13 +7,18 @@ import com.allibilli.potluck.model.ParticipantItem;
 import com.allibilli.potluck.model.RootParticipant;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Gopi.Kancharla@CapitalOne.com
@@ -28,14 +33,20 @@ public class Controller {
 
 
     @PostMapping("/save")
-    public void save(@ModelAttribute Participant participant) {
+    public ModelAndView save(@ModelAttribute Participant participant, RedirectAttributes attributes) {
         log.info("Saving Input");
-        participantRepository.save(participant);
+        if (ObjectUtils.isEmpty(participant.getName()) || ObjectUtils.isEmpty(participant.getEmail())) {
+            attributes.addAttribute("status", "Nothing Saved. Sorry!");
+        } else {
+            participantRepository.save(participant);
+            attributes.addAttribute("status", "SavedSuccessfully");
+        }
+        return new ModelAndView("redirect:/index.html", new HashMap<>());
     }
 
     @RequestMapping("/list")
     public JSONRoot list() {
-        log.info("Saving Input");
+        log.info("Retrieving Data");
         List<Participant> participants = participantRepository.findAll();
 
         JSONRoot root = new JSONRoot();
@@ -46,7 +57,7 @@ public class Controller {
             List<ParticipantItem> participantItems = new ArrayList<>();
 
             rootParticipant.setEmail(participant.getEmail());
-            rootParticipant.setEmail(participant.getEmail());
+            rootParticipant.setName(participant.getName());
 
             String list = participant.getItems();
             String[] items = list.split(",");

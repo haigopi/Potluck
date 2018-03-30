@@ -4,11 +4,11 @@ security:
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://potluck:potluck@cluster0-smvcu.mongodb.net/test
-      database: test
+      uri: mongodb+srv://potluck:potluck@cluster0-smvcu.mongodb.net/
+      database: potluck
 server:
   servlet:
-    context-path: /event
+    context-path: /
 
 app:
   client:
