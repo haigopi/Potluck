@@ -1,0 +1,120 @@
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond|Cardo:400italic);
+
+.sandbox-correct-pronounciation {
+    padding: 20px 10px 10px 10px;
+}
+
+.heading-correct-pronounciation {
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+
+h1 {
+    color: #fff;
+    font-family: 'Cardo', serif;
+    font-size: 1.5em;
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    line-height: 2.2em;
+}
+
+em {
+    font-family: 'EB Garamond', serif;
+    font-size: 3.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    font-style:normal;
+    padding-top: 0.1em;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+
+    &::before, &::after {
+        content: "§";
+        display: inline-block;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        opacity: 0.2;
+        margin: 0 0.6em;
+        font-size: 0.5em;
+    }
+
+}
+
+
+.bottom {
+    font-size: 1.5em;
+    letter-spacing: 0.07em;
+    font-size: 1em;
+    display: block;
+}
+
+
+
+a:link {
+    text-decoration: none;
+    color: darkred;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: underline;
+}
+.form-label-left{
+    width:150px !important;
+}
+.form-line{
+    padding-top:12px;
+    padding-bottom:12px;
+}
+.form-label-right{
+    width:150px !important;
+}
+.form-all{
+    width:580px;
+    color:#555 !important;
+    font-family:'Roboto';
+    font-size:18px;
+}
+.form-radio-item label, .form-checkbox-item label, .form-grading-label, .form-header{
+    color: #555;
+}
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+
+}
+.node {
+    font: 14px Abel;
+    font-weight: bold;
+    fill : black;
+}
+.link {
+    fill: none;
+    stroke: white;
+    stroke-width: 1.5px;
+
+}
+.test{
+    background: #f6e6b4; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  #f6e6b4 0%, #ed9017 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#f6e6b4), color-stop(100%,#ed9017)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #f6e6b4 0%,#ed9017 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #f6e6b4 0%,#ed9017 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #f6e6b4 0%,#ed9017 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #f6e6b4 0%,#ed9017 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6e6b4', endColorstr='#ed9017',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
