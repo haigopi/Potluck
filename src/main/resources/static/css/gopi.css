@@ -118,3 +118,10 @@ a:active {
     background: radial-gradient(ellipse at center,  #f6e6b4 0%,#ed9017 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6e6b4', endColorstr='#ed9017',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+
+.presence {
+    font-family: 'Tangerine', serif;
+    font-size: 38px;
+    text-shadow: 1px 1px 1px #7c7c7c;
+    color: whitesmoke;
+}

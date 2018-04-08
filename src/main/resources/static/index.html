@@ -17,9 +17,9 @@
   <link href="css/formCss.css" rel="stylesheet" type="text/css" />
   <link type="text/css" rel="stylesheet" href="css/nova.css" />
   <link type="text/css" media="print" rel="stylesheet" href="css/printForm.css" />
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
   <link type="text/css" rel="stylesheet" href="css/jotForm.css"/>
-    <link type="text/css" rel="stylesheet" href="css/gopi.css"/>
+   <link type="text/css" rel="stylesheet" href="css/gopi.css"/>
 
   <style>
     @import url(https://fonts.googleapis.com/css?family=Abel);
@@ -102,15 +102,15 @@
     <h1 class="heading heading-correct-pronounciation">
         Its Our
         <em>Potluck</em><br>
-        on Apr 22, 2018 @Lake Ray Robertson - Expected Avg Count: 50 Adults & 40 Children <br>
-        <a href="#formLink"> <b>Add your contributions</b></a>
+        on Apr 22, 2018 @Lake Ray Robertson - Expected Avg Count: 30 Adults & 30 Children <br>
+        <a href="#formLink" class="presence"> <b>Confirm Your Presence</b></a>
     </h1>
 </div>
 
-<div id="treeContainer" style=" width: 100%;  text-align: center;">
-    <script type="text/javascript">
-        document.getElementById("si" + "mple" + "_spc").value = "50939545297166-50939545297166";
-    </script>
+<div id="treeContainer" style=" width: 100%; height: 100%; text-align: center;">
+    <!--<script type="text/javascript">-->
+        <!--document.getElementById("si" + "mple" + "_spc").value = "50939545297166-50939545297166";-->
+    <!--</script>-->
 </div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
@@ -157,7 +157,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <input type="hidden" id="simple_spc" name="simple_spc" value="50939545297166" />
+                        <!--<input type="hidden" id="simple_spc" name="simple_spc" value="50939545297166" />-->
 
                     </form>
                 </fieldset>
@@ -199,7 +199,7 @@
 </html>
 
 <script>
-    var diameter = 960;
+    var diameter = 1024;
     var tree = d3.layout.tree().size([ 360, diameter / 2 - 220 ]).separation(
         function(a, b) {
             return (a.parent == b.parent ? 1 : 2) / a.depth;
@@ -208,7 +208,7 @@
         return [ d.y, d.x / 180 * Math.PI ];
     });
     var svg = d3.select("#treeContainer").append("svg")
-        .attr("width", diameter).attr("height", diameter - 150).append("g")
+        .attr("width", diameter).attr("height", diameter - 80).append("g")
         .attr("transform",
             "translate(" + diameter / 2 + "," + diameter / 2 + ")");
     <!--d3.json("json/myJson", function(error, root) { -->
@@ -230,7 +230,7 @@
             return d.name;
         });
     });
-    d3.select(self.frameElement).style("height", diameter - 150 + "px");
+    d3.select(self.frameElement).style("height", diameter - 100 + "px");
 
     var queryStrting = window.location.href.split("?")[1];
     var hash = queryStrting.split('&');
