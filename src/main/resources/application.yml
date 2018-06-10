@@ -5,7 +5,7 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://potluck:potluck@cluster0-smvcu.mongodb.net/
-      database: potluck
+      database: dcl
 server:
   servlet:
     context-path: /
