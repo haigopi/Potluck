@@ -3,6 +3,19 @@
 <head>
   <meta charset="ISO-8859-1">
 
+<script>
+    function aggregateFoods(){
+        var inputs = document.getElementsByTagName('input');
+        var foods = "";
+        for(var i = 0; i < inputs.length; i++) {
+            if(inputs[i].type.toLowerCase() == 'checkbox' && inputs[i].checked) {
+                foods = foods + inputs[i].value + ",";
+            }
+        }
+        foods = foods.substring(0, foods.length - 1);
+        document.getElementById("items").value = foods;
+    }
+</script>
 
   <script src="js/prototype.forms.js" type="text/javascript"></script>
   <script src="js/jotform.forms.js" type="text/javascript"></script>
@@ -20,6 +33,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
   <link type="text/css" rel="stylesheet" href="css/jotForm.css"/>
    <link type="text/css" rel="stylesheet" href="css/gopi.css"/>
+   <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 
   <style>
     @import url(https://fonts.googleapis.com/css?family=Abel);
@@ -97,11 +111,11 @@
 </head>
 
 
-<body class="test">
+<body class="dcl">
 <div class="sandbox sandbox-correct-pronounciation">
     <h1 class="heading heading-correct-pronounciation">
-        Its Our
-        <em>SWYCH-DYCL Cup</em><br>
+        <img border="0" src="http://dallascricket.net/Img/DCLNewLogo.jpg" width="257" height="266">
+        <em class="thanks">SWYCH-DYCL Cup</em><br>
         on Jul 1st, 2018 @ Russel Creek Ground<br>
         <a href="#formLink" class="presence"> <b>Confirm Your Presence</b></a>
     </h1>
@@ -140,17 +154,21 @@
                                     <label class="form-label form-label-left form-label-auto" id="label_8" for="input_8"> What AM I Getting? </label>
                                     <div id="cid_8" class="form-input jf-required">
                                         <!--<textarea id="input_8" class="form-textarea" name="items" cols="40" rows="6" placeholder="Enter Comma Separated values like Rice, Water, etc..."></textarea> -->
+                                        <input name="items" type="hidden" id="items"/>
                                         <fieldset id="group2">
-                                            <label><input type="checkbox" />Food 1</label>
-                                            <label><input type="checkbox" />Food 2</label>
-                                            <label><input type="checkbox" />Food 3</label>
+                                            <label class="food"><input type="checkbox" value="Biryani"/>Biryani</label><br>
+                                            <label class="food"><input type="checkbox" value="Salad"/>Salad</label><br>
+                                            <label  class="food"><input type="checkbox" value="Chicken Biryani"/>Chicken Biryani</label><br>
+                                            <label class="food"><input type="checkbox" value="Chole"/>Chole</label><br>
+                                            <label class="food"><input type="checkbox" value="Roti"/>Roti</label><br>
+                                            
                                         </fieldset>
                                     </div>
                                 </li>
                                 <li class="form-line" data-type="control_button" id="id_2">
                                     <div id="cid_2" class="form-input-wide">
                                         <div style="margin-left:156px" class="form-buttons-wrapper">
-                                            <button id="input_2" type="submit" class="form-submit-button">
+                                            <button id="input_2" type="submit" class="form-submit-button" onclick="aggregateFoods()">
                                                 Submit (Don't make for more than 20 people)
                                             </button>
                                         </div>
@@ -174,7 +192,7 @@
             <h2>Priorities</h2>
             <ul>
                 <li><a href="#">Be responsible at your kids & don't let them into deep lake </a></li>
-                <li><a href="#">Don't cook for more than 20 people, let others also cook the same</a></li>
+                <li><a href="#">Don't cook for more than 30 people, let others also cook the same</a></li>
                 <li><a href="#">Bring your own blanket to sit & don't get dehydrate</a></li>
                 <li><a href="#">Be mentally ready for last minute place change</a></li>
                 <li><a href="#">Make sure kids are not handling allergic food. </a></li>
@@ -182,21 +200,14 @@
                 <li><a href="#">Keep an extra set of clothes & first aid kit</a></li>
             </ul>
         </div>
-        <div>
-            <h2>Items needed</h2>
-            <ul>
-                <li><a href="#">Paper Towels</a></li>
-                <li><a href="#">Cups</a></li>
-                <li><a href="#">Lots of Food, Possibly Veg</a></li>
-                <li><a href="#">Gatorades & water bottels</a></li>
-                <li><a href="#">Plates, bowls, forks, spoons, knives</a></li>
-            </ul>
-        </div>
     </div>
 </div>
 <br><br><br><br><br><br><br>
 <div class="title">
-    <h1 class="thanks">thank you all<br/> Gopi Kancharla</h1>
+    <h1 class="thanks">thank you all DCL </h1>
+
+    <br>
+    <label class="food">Powered AlliBilli.com</label>
 </div>
 
 

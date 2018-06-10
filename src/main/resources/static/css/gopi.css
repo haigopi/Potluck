@@ -118,10 +118,22 @@ a:active {
     background: radial-gradient(ellipse at center,  #f6e6b4 0%,#ed9017 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6e6b4', endColorstr='#ed9017',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-
+.dcl{
+background: #c5deea; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, #c5deea 0%, #8abbd7 44%, #066dab 82%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, #c5deea 0%,#8abbd7 44%,#066dab 82%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, #c5deea 0%,#8abbd7 44%,#066dab 82%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
 .presence {
     font-family: 'Tangerine', serif;
     font-size: 38px;
     text-shadow: 1px 1px 1px #7c7c7c;
     color: whitesmoke;
+}
+.food{
+    font-family: 'Fira Sans', sans-serif;
+    color: #c5deea;
+    size: 12px;
+
 }
